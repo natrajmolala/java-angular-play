@@ -1,11 +1,9 @@
-@(title: String)(content: Html)
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" ng-app="myApp">
     <head>
         <meta charset="utf-8">
-        <title>@title</title>
+        <title>Catch the offer</title>
             <!-- Latest compiled and minified Bootstrap CSS -->
         <link rel="stylesheet" href='@routes.Assets.versioned("lib/bootstrap/css/bootstrap.css")'>
         <link rel="stylesheet" href='@routes.Assets.versioned("lib/bootstrap/css/bootstrap-theme.css")'>
@@ -15,27 +13,61 @@
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
     </head>
     <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
 
-            <!-- Fixed navbar -->
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Home</a>
+                        <!-- Fixed navbar -->
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Cto</a>
+                            </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#">Offers</a></li>
+                                </ul>
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <form class="navbar-form navbar-left" role="search">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                    </form>
+                                    <li><a href="#">Sign up</a></li>
+                                    <li><a href="#">Sign in</a></li>
+                                </ul>
+                            </div> <!-- /.navbar-collapse -->
+                        </div> <!-- /.container-fluid -->
+                    </nav>
                 </div>
             </div>
-        </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-9" ng-view></div>
+                </div>
 
-        @content
+            </div>
+        </div>
     </body>
+
 
     <script src='@routes.Assets.versioned("lib/angularjs/angular.js")' type="text/javascript"></script>
     <script src='@routes.Assets.versioned("lib/angularjs/angular-route.js")' type="text/javascript"></script>
     <script src='@routes.Assets.versioned("lib/angular-ui-bootstrap/ui-bootstrap-tpls.js")' type="text/javascript"></script>
+    <script type='text/javascript' src='@routes.Assets.versioned("javascripts/app.js")'></script>
+    <script type='text/javascript' src='@routes.Assets.versioned("javascripts/dashboard/DashboardCtrl.js")'></script>
+    <script type='text/javascript' src='@routes.Assets.versioned("javascripts/dashboard/DashboardService.js")'></script>
 
 </html>
